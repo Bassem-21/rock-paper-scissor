@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px; /* Add some padding for mobile */
 }
 .rock-paper-scissor {
   font-size: 30px;
@@ -77,6 +78,16 @@
   margin-bottom: 10px;
   padding: 10px;
   width: 200px;
+  border: 2px solid #ffcc00; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: rgba(255, 204, 0, 0.1); /* Light background */
+  color: #fff; /* Text color */
+  transition: border-color 0.3s, background-color 0.3s; /* Transition for hover effect */
+}
+.login-container input:focus {
+  border-color: #ffd700; /* Border color on focus */
+  background-color: rgba(255, 204, 0, 0.2); /* Darker background on focus */
+  outline: none; /* Remove default outline */
 }
 .start-game-button {
   padding: 10px 20px;
@@ -121,4 +132,35 @@
   border-radius: 10px;
   text-align: center;
   display: none; /* Start hidden */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .rock-paper-scissor {
+      font-size: 24px; /* Slightly smaller font for mobile */
+  }
+  .username-display {
+      font-size: 20px;
+  }
+  .move-button {
+      width: 80px; /* Smaller buttons */
+      height: 80px;
+  }
+  .reset-score-button, .restart-button, .start-game-button {
+      padding: 8px 16px; /* Smaller buttons */
+      font-size: 14px; /* Smaller text */
+  }
+  .move-image {
+      height: 40px; /* Smaller images */
+  }
+}
+
+@media (max-width: 400px) {
+  .move-button {
+      width: 70px;
+      height: 70px;
+  }
+  .move-image {
+      height: 30px;
+  }
 }
