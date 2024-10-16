@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "/rock-paper-scissors.html"
+status = 200

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="rock-paper-scissors.css" />
+    <style></style>
+  </head>
+  <body class="body">
+    <div id="usernameDisplay" class="username-display" style="display: none;"></div>
+
+    <div class="login-container">
+        <p class="rock-paper-scissor">Enter Your Name</p>
+        <input type="text" id="username" placeholder="Your Name" />
+        <button id="startGameButton" class="start-game-button">Start Game</button>
+        <p id="error-message" class="error-message" style="display: none;"></p>
+    </div>
+
+    <div class="series-selection" style="display: none;">
+        <button id="bestOf3" class="start-game-button" onclick="setSeries(3);">Best of 3</button>
+        <button id="bestOf5" class="start-game-button" onclick="setSeries(5);">Best of 5</button>
+        <button id="openPlay" class="start-game-button" onclick="setOpenPlay();">Open Play</button>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <p class="rock-paper-scissor">Rock Paper Scissors</p>
+
+        <button class="move-button" onclick="playGame('rock');">
+            <img src="rock-emoji.png" class="move-image" />
+        </button>
+
+        <button class="move-button" onclick="playGame('paper');">
+            <img src="paper-emoji.png" class="move-image" />
+        </button>
+
+        <button class="move-button" onclick="playGame('scissors');">
+            <img src="scissors-emoji.png" class="move-image" />
+        </button>
+
+        <p class="js-result result"></p>
+        <div class="js-score">
+            <p class="score"></p>
+            <p class="series"></p>
+        </div>
+
+        <div class="reset-container">
+            <button class="reset-score-button" onclick="resetScore();">
+                Reset Score
+            </button>
+        </div>
+    </div>
+    <script src="rock-paper-scissors.js"></script>
+  </body>
+</html>
