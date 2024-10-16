@@ -54,7 +54,7 @@
 .js-Moves {
   margin-bottom: 60px;
 }
-.reset-score-button {
+.reset-score-button, .restart-button {
   margin-top: 15px;
   padding: 10px 20px;
   background-color: #ffcc00;
@@ -65,7 +65,7 @@
   font-size: 16px;
   transition: background-color 0.3s;
 }
-.reset-score-button:hover {
+.reset-score-button:hover, .restart-button:hover {
   background-color: #ffd700;
 }
 .login-container {
@@ -110,4 +110,15 @@
 .reset-container {
   display: flex;
   justify-content: center;
+}
+.winner-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.947);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  display: none; /* Start hidden */
 }

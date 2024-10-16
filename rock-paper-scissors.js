@@ -45,6 +45,7 @@ function setSeries(length) {
   document.querySelector('.series-selection').style.display = 'none'; // Hide series selection
   document.querySelector('.game-container').style.display = 'block'; // Show game container
   updateScoreElement();
+  hideWinnerBox();
 }
 
 function setOpenPlay() {
@@ -53,6 +54,7 @@ function setOpenPlay() {
   document.querySelector('.series-selection').style.display = 'none'; // Hide series selection
   document.querySelector('.game-container').style.display = 'block'; // Show game container
   updateScoreElement();
+  hideWinnerBox();
 }
 
 function playGame(playerMove) {
@@ -100,24 +102,33 @@ function updateScores(result) {
   } else {
       score.Ties += 1;
   }
+
   localStorage.setItem("score", JSON.stringify(score));
   updateScoreElement();
 }
 
 function checkSeriesWin() {
-  console.log(`Player: ${seriesScore.Player}, Computer: ${seriesScore.Computer}`); // Debug line
   if (seriesScore.Player >= Math.ceil(seriesLength / 2)) {
-      alert("You won the series!");
+      showWinnerBox("You won the series!");
       resetSeries();
   } else if (seriesScore.Computer >= Math.ceil(seriesLength / 2)) {
-      alert("Computer won the series!");
+      showWinnerBox("Computer won the series!");
       resetSeries();
   }
 }
 
+function showWinnerBox(message) {
+  document.getElementById("winnerMessage").innerText = message;
+  document.getElementById("winnerBox").style.display = "block";
+}
+
+function hideWinnerBox() {
+  document.getElementById("winnerBox").style.display = "none";
+}
+
 function resetSeries() {
   seriesScore = { Player: 0, Computer: 0, Total: 0 };
-  updateScoreElement();
+  updateScoreElement(); // Update the score display after resetting the series
   playerMoves = []; // Clear recent moves if needed
 }
 
@@ -164,6 +175,17 @@ function pickComputerMove() {
   if (randomNumber < 1 / 3) return "rock";
   else if (randomNumber < 2 / 3) return "paper";
   return "scissors";
+}
+
+function restartGame() {
+  score = { Wins: 0, Losses: 0, Ties: 0 };
+  seriesScore = { Player: 0, Computer: 0, Total: 0 };
+  playerMoves = [];
+  localStorage.removeItem('score');
+  updateScoreElement();
+  hideWinnerBox();
+  document.querySelector('.game-container').style.display = 'none';
+  document.querySelector('.series-selection').style.display = 'flex';
 }
 
 // Show login form on page load
