@@ -8,14 +8,23 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 20px; /* Add some padding for mobile */
+  padding: 20px;
+  /* Add some padding for mobile */
 }
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  /* Optional: To visually indicate the button is disabled */
+}
+
 .rock-paper-scissor {
   font-size: 30px;
   color: white;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .username-display {
   font-size: 24px;
   font-weight: bold;
@@ -24,10 +33,12 @@
   text-align: center;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
+
 .move-image {
   height: 50px;
   border-radius: 1px;
 }
+
 .move-button {
   background-color: transparent;
   border: 3px solid white;
@@ -38,9 +49,11 @@
   cursor: pointer;
   transition: transform 0.2s;
 }
+
 .move-button:hover {
   transform: scale(1.1);
 }
+
 .result {
   font-size: 25px;
   font-weight: bold;
@@ -49,13 +62,17 @@
   opacity: 0;
   transition: opacity 0.5s;
 }
+
 .show-result {
   opacity: 1;
 }
+
 .js-Moves {
   margin-bottom: 60px;
 }
-.reset-score-button, .restart-button {
+
+.reset-score-button,
+.restart-button {
   margin-top: 15px;
   padding: 10px 20px;
   background-color: #ffcc00;
@@ -66,29 +83,43 @@
   font-size: 16px;
   transition: background-color 0.3s;
 }
-.reset-score-button:hover, .restart-button:hover {
+
+.reset-score-button:hover,
+.restart-button:hover {
   background-color: #ffd700;
 }
+
 .login-container {
   display: none;
   flex-direction: column;
   align-items: center;
 }
+
 .login-container input {
   margin-bottom: 10px;
   padding: 10px;
   width: 200px;
-  border: 2px solid #ffcc00; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  background-color: rgba(255, 204, 0, 0.1); /* Light background */
-  color: #fff; /* Text color */
-  transition: border-color 0.3s, background-color 0.3s; /* Transition for hover effect */
+  border: 2px solid #ffcc00;
+  /* Border color */
+  border-radius: 5px;
+  /* Rounded corners */
+  background-color: rgba(255, 204, 0, 0.1);
+  /* Light background */
+  color: #fff;
+  /* Text color */
+  transition: border-color 0.3s, background-color 0.3s;
+  /* Transition for hover effect */
 }
+
 .login-container input:focus {
-  border-color: #ffd700; /* Border color on focus */
-  background-color: rgba(255, 204, 0, 0.2); /* Darker background on focus */
-  outline: none; /* Remove default outline */
+  border-color: #ffd700;
+  /* Border color on focus */
+  background-color: rgba(255, 204, 0, 0.2);
+  /* Darker background on focus */
+  outline: none;
+  /* Remove default outline */
 }
+
 .start-game-button {
   padding: 10px 20px;
   background-color: #ffcc00;
@@ -99,29 +130,37 @@
   font-size: 16px;
   transition: background-color 0.3s;
 }
+
 .start-game-button:hover {
   background-color: #ffd700;
 }
+
 .error-message {
   color: red;
   margin-top: 10px;
 }
+
 .series-selection {
   display: none;
   align-items: center;
   gap: 10px;
 }
-.score, .series {
+
+.score,
+.series {
   margin: 5px 0;
 }
+
 .js-score {
   display: flex;
   justify-content: space-between;
 }
+
 .reset-container {
   display: flex;
   justify-content: center;
 }
+
 .winner-box {
   position: absolute;
   top: 40%;
@@ -131,27 +170,39 @@
   padding: 40px;
   border-radius: 10px;
   text-align: center;
-  display: none; /* Start hidden */
+  display: none;
+  /* Start hidden */
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
   .rock-paper-scissor {
-      font-size: 24px; /* Slightly smaller font for mobile */
+      font-size: 24px;
+      /* Slightly smaller font for mobile */
   }
+
   .username-display {
       font-size: 20px;
   }
+
   .move-button {
-      width: 80px; /* Smaller buttons */
+      width: 80px;
+      /* Smaller buttons */
       height: 80px;
   }
-  .reset-score-button, .restart-button, .start-game-button {
-      padding: 8px 16px; /* Smaller buttons */
-      font-size: 14px; /* Smaller text */
+
+  .reset-score-button,
+  .restart-button,
+  .start-game-button {
+      padding: 8px 16px;
+      /* Smaller buttons */
+      font-size: 14px;
+      /* Smaller text */
   }
+
   .move-image {
-      height: 40px; /* Smaller images */
+      height: 40px;
+      /* Smaller images */
   }
 }
 
@@ -160,6 +211,7 @@
       width: 70px;
       height: 70px;
   }
+
   .move-image {
       height: 30px;
   }

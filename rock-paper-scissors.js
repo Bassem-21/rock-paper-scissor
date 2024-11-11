@@ -14,7 +14,7 @@ let seriesLength = 0; // Number of games in the series
 let playerMoves = []; // Array to store the player's previous moves
 let isOpenPlay = false; // Track if in open play mode
 
-document.getElementById('startGameButton').onclick = function() {
+document.getElementById('startGameButton').onclick = function () {
   const username = document.getElementById('username').value;
   const errorMessage = document.getElementById('error-message');
 
@@ -68,6 +68,9 @@ function playGame(playerMove) {
       computerMove = counterMove(lastMove);
   }
 
+  document.getElementById('computerMove').innerText = computerMove.charAt(0).toUpperCase() + computerMove.slice(1);
+
+
   let result = determineResult(playerMove, computerMove);
   updateScores(result);
 
@@ -120,6 +123,14 @@ function checkSeriesWin() {
 function showWinnerBox(message) {
   document.getElementById("winnerMessage").innerText = message;
   document.getElementById("winnerBox").style.display = "block";
+
+  // Disable the game buttons
+  const moveButtons = document.querySelectorAll('.move-button');
+  moveButtons.forEach(button => button.disabled = true); // Disable the buttons
+
+  // Disable the reset score button
+  const resetButton = document.querySelector('.reset-score-button');
+  resetButton.disabled = true; // Disable the reset score button
 }
 
 function hideWinnerBox() {
@@ -186,9 +197,17 @@ function restartGame() {
   hideWinnerBox();
   document.querySelector('.game-container').style.display = 'none';
   document.querySelector('.series-selection').style.display = 'flex';
+
+  // Enable the game buttons again
+  const moveButtons = document.querySelectorAll('.move-button');
+  moveButtons.forEach(button => button.disabled = false); // Enable the buttons
+
+  // Enable the reset score button
+  const resetButton = document.querySelector('.reset-score-button');
+  resetButton.disabled = false; // Enable the reset score button
 }
 
 // Show login form on page load
-window.onload = function() {
+window.onload = function () {
   document.querySelector('.login-container').style.display = 'flex';
 };
