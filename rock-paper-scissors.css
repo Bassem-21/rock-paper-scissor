@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   padding: 20px;
   /* Add some padding for mobile */
 }
@@ -176,6 +176,7 @@ button:disabled {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
+  
   .rock-paper-scissor {
       font-size: 24px;
       /* Slightly smaller font for mobile */
